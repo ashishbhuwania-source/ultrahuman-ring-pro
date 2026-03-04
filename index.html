@@ -291,25 +291,79 @@
   footer a { color:var(--pro); text-decoration:none; }
   .footer-brand { font-size:11px; color:var(--text-tertiary); margin-top:16px; font-family:'JetBrains Mono',monospace; letter-spacing:.08em; }
 
+  .jade-caps-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
+
+  /* ====== INLINE SECTION HELPER ====== */
+  .inline-section { padding:0 80px 120px; max-width:1400px; margin:0 auto; }
+
+  /* ====== TABLET ====== */
   @media(max-width:1100px){
-    .hero{grid-template-columns:1fr;padding:100px 40px 80px;} .hero-right{display:none;}
+    .hero{grid-template-columns:1fr;padding:100px 40px 80px;} 
+    .hero-right{display:none;}
     .two-col,.charger-grid,.jade-text-grid,.ua-inner{grid-template-columns:1fr;}
-    .ua-img{height:300px;} .lifestyle-mosaic{grid-template-columns:repeat(2,1fr);grid-template-rows:auto;}
+    .ua-img{height:260px;object-fit:cover;}
+    .lifestyle-mosaic{grid-template-columns:repeat(2,1fr);grid-template-rows:auto;}
     .lifestyle-cell.large,.lifestyle-cell.tall{grid-column:span 1;grid-row:span 1;}
-    .feature-app-grid{grid-template-columns:repeat(2,1fr);} .numbers-grid{grid-template-columns:repeat(2,1fr);}
-    .closing-overlay{padding:0 40px;} .unibody-labels{grid-template-columns:repeat(2,1fr);}
+    .feature-app-grid{grid-template-columns:repeat(2,1fr);}
+    .numbers-grid{grid-template-columns:repeat(2,1fr);}
+    .closing-overlay{padding:0 40px;}
+    .unibody-labels{grid-template-columns:repeat(2,1fr);}
     .section,.section-narrow,.paradigm-section{padding:80px 40px;}
-    .hooks-grid{grid-template-columns:1fr;} footer{padding:48px 40px;}
+    .inline-section{padding:0 40px 80px;}
+    .hooks-grid{grid-template-columns:1fr;}
+    footer{padding:48px 40px;}
+    .battery-grid{grid-template-columns:1fr;}
   }
+
+  /* ====== MOBILE ====== */
   @media(max-width:700px){
-    nav{padding:0 20px;} .nav-links{display:none;}
-    .sensor-cards{grid-template-columns:1fr;} .feature-app-grid{grid-template-columns:1fr;}
-    .numbers-grid{grid-template-columns:1fr;} .lifestyle-mosaic{grid-template-columns:1fr;}
-    .unibody-labels{grid-template-columns:1fr;} .battery-stats-box{gap:32px;padding:28px 32px;flex-wrap:wrap;justify-content:center;}
-    .bstat-num{font-size:48px;} .section,.section-narrow,.paradigm-section{padding:60px 20px;}
-    .geek-block{padding:28px 20px;} .closing-overlay{background:rgba(0,0,0,.7);}
-    .closing-text{max-width:100%;} footer{padding:40px 20px;} .pipeline::before{display:none;}
-    .paradigm-quote{padding:32px 24px;}
+    nav{padding:0 20px;}
+    .nav-links{display:none;}
+    .hero{padding:80px 20px 60px;min-height:auto;}
+    .hero h1{font-size:clamp(36px,10vw,52px);}
+    .hero-sub{font-size:16px;}
+    .hero-stats{gap:20px;justify-content:flex-start;flex-wrap:wrap;}
+    .hero-stat-number{font-size:32px;}
+    .section,.section-narrow,.paradigm-section{padding:60px 20px;}
+    .inline-section{padding:0 20px 60px;}
+    .sensor-cards,.feature-app-grid,.jade-text-grid,.jade-caps-grid{grid-template-columns:1fr;}
+    .numbers-grid{grid-template-columns:1fr 1fr;gap:12px;}
+    .number-card{padding:24px 16px;}
+    .number-value{font-size:36px;}
+    .lifestyle-mosaic{grid-template-columns:1fr 1fr;gap:8px;}
+    .lifestyle-cell{border-radius:10px;}
+    .unibody-labels{grid-template-columns:1fr 1fr;gap:12px;}
+    .ub-label{padding:18px 14px;}
+    .battery-stats-box{gap:20px;padding:24px 20px;flex-wrap:wrap;justify-content:center;border-radius:16px;}
+    .bstat-num{font-size:40px;}
+    .bstat-sep{display:none;}
+    .battery-grid{grid-template-columns:1fr;}
+    .geek-block{padding:28px 20px;}
+    .geek-block p{font-size:12px;}
+    .closing-hero img{max-height:480px;object-position:60% center;}
+    .closing-overlay{background:linear-gradient(to top,rgba(0,0,0,.9) 40%,rgba(0,0,0,.4));align-items:flex-end;padding:0;}
+    .closing-text{max-width:100%;padding:32px 24px 40px;}
+    .closing-text h2{font-size:32px;}
+    .closing-text p{font-size:15px;}
+    footer{padding:40px 20px;}
+    .pipeline::before{display:none;}
+    .pipeline-step{gap:16px;}
+    .step-marker{width:52px;height:52px;border-radius:14px;font-size:20px;}
+    .paradigm-quote{padding:28px 20px;}
+    .paradigm-quote p{font-size:16px;}
+    .hook-card{padding:20px 22px;font-size:15px;}
+    .ua-inner{grid-template-columns:1fr;}
+    .ua-img{height:220px;}
+    .ua-content{padding:28px 24px;}
+    .jade-img-row{grid-template-columns:1fr;}
+    .two-col{gap:32px;}
+    table{font-size:12px;}
+    thead th{padding:10px 12px;font-size:10px;}
+    td{padding:10px 12px;font-size:12px;}
+    .sensor-card{padding:28px 24px;}
+    .feature-app-card .fac-body{padding:20px 20px 24px;}
+    .charger-feature{gap:16px;padding:24px 0;}
+    .section-title{font-size:clamp(28px,7vw,44px);}
   }
 </style>
 </head>
@@ -652,7 +706,7 @@
 
   <div style="margin-top:40px;padding:40px;border-radius:20px;border:1px solid rgba(198,255,0,.15);background:rgba(198,255,0,.03);" class="reveal rd3">
     <div style="font-size:12px;font-weight:600;color:var(--pro);text-transform:uppercase;letter-spacing:.12em;margin-bottom:24px;">What Jade can do right now</div>
-    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;">
+    <div class="jade-caps-grid">
       <div style="padding:20px;border-radius:12px;border:1px solid var(--border);background:var(--bg-card);">
         <div style="font-size:20px;margin-bottom:10px;">🗣️</div>
         <div style="font-size:14px;font-weight:600;margin-bottom:6px;">Answer health questions</div>
@@ -675,7 +729,7 @@
 </div>
 
 <!-- STORAGE / OFF-GRID IMAGE -->
-<div class="two-col reveal" style="padding:0 80px 120px;max-width:1400px;margin:0 auto;gap:80px;display:grid;grid-template-columns:1fr 1fr;align-items:center;">
+<div class="two-col reveal inline-section">
   <div>
     <div class="section-label">Off the grid</div>
     <h2 style="font-size:clamp(32px,4vw,52px);font-weight:800;letter-spacing:-.03em;line-height:1.05;margin-bottom:20px;">On the go.<br>Off the grid.</h2>
@@ -699,7 +753,7 @@
 </div>
 
 <!-- LIFESTYLE MOSAIC -->
-<div style="padding:0 80px 120px;max-width:1400px;margin:0 auto;">
+<div class="inline-section">
   <div class="section-label reveal" style="margin-bottom:24px;">In the wild</div>
   <div class="lifestyle-mosaic reveal rd1">
     <div class="lifestyle-cell large"><img src="https://public-web-assets.uh-static.com/web_v2/ring-pro/landing-page/lifestyle-images/1.png" alt="Ring PRO lifestyle"></div>
